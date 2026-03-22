@@ -1,8 +1,5 @@
 @echo off
 
-REM Navigate to your project folder (change this path)
-cd /d C:\path\to\your\streamlit\app
-
 REM Start Streamlit app
 start cmd /k streamlit run app.py
 
