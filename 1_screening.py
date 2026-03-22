@@ -60,65 +60,34 @@ with col1:
         isn = st.text_input("Capture Tag/ISN")
         pocapture = st.text_input("Place of Capture")
         capture_unit = st.text_input("Capturing Unit")
-
         capture_circ = st.text_area("Capture Circumstances")
-
         docs = st.checkbox("Documents?")
-
         docs_bool = False
-
         if docs:
-
             docdescription = st.text_area("Describe Documents")
-
             docs_bool = True
-
         else:
-
             docdescription = ""
-
         weapons = st.checkbox("Weapons?")
-
         weapons_bool = False
-
         if weapons:
-
             wpnsdescription = st.text_area("List Weapons")
-
             weapons_bool = True
-
         else:
-
             wpnsdescription = ""
 
     # --- Section 1: Personal Info ---
-
- 
-
- 
-
 with col2:
-
     with st.container(border=True):
-
         st.subheader("Personal Info")
-
         fname = st.text_input("First Name")
-
         lname = st.text_input("Last Name")
-
         sex = st.selectbox(
-
         "Sex",
-
         ["Male", "Female", "Unknown"], index=None
-
     )
-
         dob = st.date_input("DOB", min_value=min_date)
-
         pob = st.text_input("POB")
-
         maritalstatus = st.selectbox(
 
         "Marital Status",
