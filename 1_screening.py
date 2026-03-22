@@ -89,128 +89,62 @@ with col2:
         dob = st.date_input("DOB", min_value=min_date)
         pob = st.text_input("POB")
         maritalstatus = st.selectbox(
-
         "Marital Status",
-
         ["Single", "Married", "Divorced", "Separated", "Widowed"], index=None
-
     )
-
     with st.container(border=True):
-
         st.subheader("Civilian")
-
         job = st.text_input("Job")
-
         org = st.text_input("Organization")
-
         duties = st.text_input("Duties")
-
         skills = st.text_input("Skills")
-
- 
 
 # --- Column 2: JSON Viewer ---
 
 with col3:
-
     with st.container(border=True):
-
         st.subheader("Military")
-
         full_unit = st.text_input("Full Unit Designation")
-
         dty_psn = st.text_input("Duty Position")
-
         miljob = st.text_input("Military Job")
-
         branch = st.selectbox(
-
         "Branch",
-
         ["Army", "Air Force", "Navy", "Marine Corps", "Coast Guard", "Space", "Other"], index=None, placeholder="Select Military Branch")
-
         svcid = st.text_input("Service ID No")
-
         station = st.text_input("Station")
-
         milskills = st.text_input("Military Skills")
-
         milexp = st.text_input("Military Experience")
 
- 
-
 with col4:
-
- 
-
     with st.container(border=True):
-
         st.subheader("Assesment Data")
-
- 
-
         wounded = st.selectbox(
-
         "Wounded?",
-
         ["No", "Yes"], index=None
-
     )
-
         intelligencelevel = st.selectbox(
-
         "Intelligence Level",
-
         ["AVG", "AVG-", "AVG+"], index=None
-
     )
-
         remarks = st.text_area("Remarks")
-
         education = st.text_input("Education")
-
         mentcondition = st.text_input("Mental Condition")
-
         cooperation = st.select_slider(
-
         "Cooperation",
-
         options=[
-
             1, 2, 3,
-
         ],
-
     )
-
         knowledge = st.select_slider(
-
         "Knowledge",
-
         options=[
-
             "A", "B", "C"
-
         ],
-
     )
-
         assessment = st.text_area("Screener Assessment")
-
         approach = st.text_area("Approach Recommendations")
 
-   
-
     # --- Generate Button ---
-
- 
-
-       
-
- 
-
- 
 
 with col5:
 
