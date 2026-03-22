@@ -7,101 +7,58 @@ from dateutil.relativedelta import relativedelta
 min_date = date.today() - relativedelta(years=100)
 
 st.set_page_config(
-
     page_title="JSON Generator",
-
     layout="wide"  # Use wide layout for better column view
-
 )
 
 st.markdown("""
-
     <style>
-
     .block-container {
-
         padding-top: 2rem;
-
     }
-
     </style>
-
     """, unsafe_allow_html=True)
 
 # pg = st.navigation(pages, position="top")
 
- 
-
 st.markdown("""
-
     <style>
-
     .block-container {
-
         padding-top: 2rem;
-
     }
-
     </style>
-
     """, unsafe_allow_html=True)
 
 # --- App Title ---
 
 logo = "images/35m.png"
 
- 
-
 st.title("Screening Report")
 
- 
-
 # --- Initialize Session State ---
-
 # This holds the generated JSON so it doesn't disappear on rerun
 
 if 'generated_json' not in st.session_state:
-
     st.session_state.generated_json = None
 
- 
-
 # --- Create Columns ---
-
 col1, col2, col3, col4, col5 = st.columns(5)
 
- 
-
 # --- Column 1: Data Entry ---
-
 with col1:
-
     with st.container(border=True):
-
         screener = st.text_input("Screener")
-
         screendtg = st.datetime_input("Screening Date", value="now")
-
     with st.container(border=True):
-
         status = st.selectbox(
-
         "Status",
-
         ["Military", "Civilian", "Paramilitary", "Unknown"], index=None, placeholder="Select EPW Status"
-
     )
-
     with st.container(border=True):
-
         st.subheader("Capture Data")
-
         captdtg = st.datetime_input("Capture Date")
-
         isn = st.text_input("Capture Tag/ISN")
-
         pocapture = st.text_input("Place of Capture")
-
         capture_unit = st.text_input("Capturing Unit")
 
         capture_circ = st.text_area("Capture Circumstances")
