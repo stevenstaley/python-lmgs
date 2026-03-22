@@ -147,61 +147,33 @@ with col4:
     # --- Generate Button ---
 
 with col5:
-
     if st.button("Generate JSON", type="primary"):
-
     # Create a Python dictionary from the input values
-
         output_data = {
-
             "screener": screener,
-
             "screening_date": screendtg,
-
             "status": status,
-
             "capture_data": {
-
                 "capture_tag_isn": isn,
-
                 "capture_date": captdtg,
-
                 "place_of_capture": pocapture,
-
                 "capturing_unit": capture_unit,
-
                 "capture_circumstances": capture_circ,
-
                 "documents": {
-
                     "docsyesorno": docs_bool,
-
                     "documents_description": docdescription
-
                 },
-
                 "weapons": {
-
                     "wpnsyesorno": weapons_bool,
-
                     "weapons_description": wpnsdescription
-
                 },
-
             "personal_info": {
-
                 "first_name": fname,
-
                 "last_name": lname,
-
                 "sex": sex,
-
                 "dob": dob,
-
                 "pob": pob,
-
                 "marital_status": maritalstatus
-
             },
 
             "military": {
