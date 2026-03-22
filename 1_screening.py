@@ -175,123 +175,61 @@ with col5:
                 "pob": pob,
                 "marital_status": maritalstatus
             },
-
             "military": {
-
                 "full_unit_designation": full_unit,
-
                 "duty_position": dty_psn,
-
                 "job": miljob,
-
                 "branch": branch,
-
                 "service_id": svcid,
-
                 "station": station,
-
                 "skills": milskills,
-
                 "military_experience": milexp
-
             },
-
             "civilian": {
-
                 "job": job,
-
                 "organization": org,
-
                 "duties": duties,
-
                 "skills": skills
-
             },
-
             "assessment_data": {
-
                 "wounded": wounded,
-
                 "intelligence_level": intelligencelevel,
-
                 "remarks": remarks,
-
                 "education": education,
-
                 "mental_condition": mentcondition,
-
                 "cooperation": cooperation,
-
                 "knowledge": knowledge,
-
                 "screener_assessment": assessment,
-
                 "approach_recommendations": approach
-
             }
-
     }
-
     }
-
         # Store the generated data in the session state
 
         st.session_state.generated_json = output_data
 
- 
-
     # Display the JSON from session state if it exists
-
     if st.session_state.generated_json:
-
         generated_data = st.session_state.generated_json
-
     else:
-
         generated_data = st.empty()
-
-       
-
     if st.button("Save JSON to file"):
-
         folder_path = "screenings/" + str(date.today())
-
         file_name = isn + "-" + fname + "-" + lname + str(captdtg) + "-" + screener
-
         file_path = os.path.join(folder_path, f"{file_name}.json")
-
         # Create folder if it doesn't exist
-
         if not os.path.exists(folder_path):
-
             os.makedirs(folder_path)
-
- 
-
         # Save the data to the file
-
         with open(file_path, "w") as f:
-
             json.dump(generated_data, f, indent=4, default=str)
-
- 
-
         # Display a success message
-
         st.success(f"File successfully saved to: {file_path}")
-
     else:
-
         # Placeholder message
-
         json_dumps = json.dumps(generated_data, indent=4, default=str)
-
         # Also display as a raw code block for easy copying
-
         if st.session_state.generated_json:
-
             stcode = st.code(json.dumps(generated_data, indent=4, default=str), language='json')
-
         else:
-
             stcode = st.empty()
