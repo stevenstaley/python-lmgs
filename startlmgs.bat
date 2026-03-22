@@ -1,0 +1,13 @@
+@echo off
+
+REM Navigate to your project folder (change this path)
+cd /d C:\path\to\your\streamlit\app
+
+REM Start Streamlit app
+start cmd /k streamlit run app.py
+
+REM Wait a few seconds for Streamlit to start
+timeout /t 5 > nul
+
+REM Open browser to Streamlit URL
+start http://localhost:8501
