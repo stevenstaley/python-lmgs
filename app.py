@@ -8,9 +8,9 @@ from dateutil.relativedelta import relativedelta
 
 min_date = date.today() - relativedelta(years=100)
 pages = {
-    "Your account": [
-        st.Page("pages/1_screening.py", title="Test App"),
-        st.Page("pages/2_test_app.py", title="Nope")
+    "Screening": [
+        st.Page("pages/1_screening.py", title="Create New"),
+        st.Page("pages/2_test_app.py", title="Placeholder")
     ]
 }
 
