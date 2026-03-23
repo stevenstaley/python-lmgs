@@ -142,6 +142,7 @@ with col5:
     if st.button("Generate JSON", type="primary"):
     # Create a Python dictionary from the input values
         output_data = {
+            "report_type": "Screening Report",
             "screener": screener,
             "screening_date": screendtg,
             "status": status,
