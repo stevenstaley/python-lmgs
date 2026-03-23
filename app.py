@@ -9,29 +9,13 @@ from dateutil.relativedelta import relativedelta
 min_date = date.today() - relativedelta(years=100)
 pages = {
     "Screening": [
-        st.Page("pages/1_screening.py", title="Create New")
+        st.Page("pages/1_screenings.py", title="Create New")],
     "SPOT": [
-        st.Page("pages/2_spot.py", title="Create New")
-    ]
-}
+        st.Page("pages/2_spot.py", title="Create New")],
+    "Edit Dropdown Lists": [
+        st.Page("pages/3_teamlist.py", title="Team and Personnel")]
+    }
 
 pg = st.navigation(pages, position="top")
 
 pg.run()
-
-# --- Page Configuration ---
-
-st.set_page_config(
-    page_title="JSON Generator",
-    layout="wide"  # Use wide layout for better column view
-)
-
-# pg = st.navigation(pages, position="top")
-
-st.markdown("""
-    <style>
-    .block-container {
-        padding-top: 2rem;
-    }
-    </style>
-    """, unsafe_allow_html=True)
