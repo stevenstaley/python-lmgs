@@ -11,14 +11,6 @@ st.set_page_config(
     layout="wide"  # Use wide layout for better column view
 )
 
-st.markdown("""
-    <style>
-    .block-container {
-        padding-top: 2rem;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
 # pg = st.navigation(pages, position="top")
 
 st.markdown("""
