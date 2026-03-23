@@ -3,6 +3,8 @@ import json
 from datetime import date
 import os
 from dateutil.relativedelta import relativedelta
+from utilities.functions import get_options_from_file
+from utilities import options
 
 min_date = date.today() - relativedelta(years=100)
 
@@ -11,6 +13,11 @@ st.set_page_config(
     layout="wide"  # Use wide layout for better column view
 )
 
+# --- Page Content ---
+
+# Get the list of options from the file
+personnel_options = get_options_from_file(options.PERSONNEL)
+team_options = get_options_from_file(options.TEAMS)
 # pg = st.navigation(pages, position="top")
 
 st.markdown("""
@@ -39,7 +46,8 @@ col1, col2, col3, col4, col5 = st.columns(5)
 # --- Column 1: Data Entry ---
 with col1:
     with st.container(border=True):
-        screener = st.text_input("Screener")
+        team = st.selectbox("Team", options=team_options)
+        screener = st.selectbox("Screener", options=personnel_options)
         screendtg = st.datetime_input("Screening Date", value="now")
     with st.container(border=True):
         status = st.selectbox(
@@ -143,6 +151,7 @@ with col5:
     # Create a Python dictionary from the input values
         output_data = {
             "report_type": "Screening Report",
+            "team": team,
             "screener": screener,
             "screening_date": screendtg,
             "status": status,
