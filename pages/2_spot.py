@@ -38,7 +38,13 @@ col1, col2, col3 = st.columns(3)
 
 # --- Column 1: Data Entry ---
 with col1:
-    
+    with st.container(border=True):
+        captdtg = st.datetime_input("Capture Date")
+        who = st.text_input("Who")
+        what = st.text_input("What")
+        who = st.text_input("Who")
+        who = st.text_input("Who")
+        who = st.text_input("Wh")
 with col2:
 
 with col3:
