@@ -48,6 +48,15 @@ with col1:
         other = st.text_area("Additional Information")
 
 with col2:
+    st.write(f"""
+        Who: {who}
+        What: {what}
+        When: {when}
+        Where: {where}
+        Why: {why}
+        How: {how}
+        Other: {other}
+        """)
     if st.button("Generate JSON", type="primary"):
     # Create a Python dictionary from the input values
         output_data = {
