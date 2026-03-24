@@ -4,9 +4,6 @@ from datetime import date
 import os
 from dateutil.relativedelta import relativedelta
 
-# Calculate the date 75 years ago from today
-
-min_date = date.today() - relativedelta(years=100)
 pages = {
     "Screening": [
         st.Page("pages/1_screenings.py", title="Create New")],
