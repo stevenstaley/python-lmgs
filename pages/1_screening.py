@@ -4,29 +4,21 @@ from datetime import date
 import os
 from dateutil.relativedelta import relativedelta
 from utilities.functions import get_options_from_file
-from utilities import options
+# from utilities.functions import load_options, save_options
+from utilities.configuration import configure_page
+from utilities.options import TEAMS, PERSONNEL
 
 min_date = date.today() - relativedelta(years=100)
 
-st.set_page_config(
-    page_title="JSON Generator",
-    layout="wide"  # Use wide layout for better column view
-)
-
+configure_page("Screening")
 # --- Page Content ---
 
 # Get the list of options from the file
-personnel_options = get_options_from_file(options.PERSONNEL)
-team_options = get_options_from_file(options.TEAMS)
+personnel_options = get_options_from_file(PERSONNEL)
+team_options = get_options_from_file(TEAMS)
 # pg = st.navigation(pages, position="top")
 
-st.markdown("""
-    <style>
-    .block-container {
-        padding-top: 2rem;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+
 
 # --- App Title ---
 
@@ -217,7 +209,7 @@ with col5:
         generated_data = st.empty()
     if st.button("Save JSON to file"):
         folder_path = "screenings/" + str(date.today())
-        file_name = isn + "-" + fname + "-" + lname + str(captdtg) + "-" + screener
+        file_name = team + "-" + isn + "-" + fname + "-" + lname + str(captdtg) + "-" + screener
         file_path = os.path.join(folder_path, f"{file_name}.json")
         # Create folder if it doesn't exist
         if not os.path.exists(folder_path):
