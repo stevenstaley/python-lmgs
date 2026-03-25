@@ -4,24 +4,16 @@ from datetime import date
 import os
 from dateutil.relativedelta import relativedelta
 from utilities.functions import get_options_from_file
-from utilities import options
+# from utilities.functions import load_options, save_options
+from utilities.configuration import configure_page
+from utilities.options import TEAMS
 
 min_date = date.today() - relativedelta(years=100)
-
-st.set_page_config(
-    page_title="SPOT",
-    layout="wide"  # Use wide layout for better column view
-)
-team_options = get_options_from_file(options.TEAMS)
+configure_page("SPOT")
+team_options = get_options_from_file(TEAMS)
 # pg = st.navigation(pages, position="top")
 
-st.markdown("""
-    <style>
-    .block-container {
-        padding-top: 2rem;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+
 
 # --- App Title ---
 
@@ -32,8 +24,8 @@ st.title("SPOT Report")
 # --- Initialize Session State ---
 # This holds the generated JSON so it doesn't disappear on rerun
 
-if 'generated_json' not in st.session_state:
-    st.session_state.generated_json = None
+if 'generated_spot_json' not in st.session_state:
+    st.session_state.generated_spot_json = None
 
 # --- Create Columns ---
 col1, col2 = st.columns(2)
@@ -77,11 +69,11 @@ with col2:
 
         # Store the generated data in the session state
 
-        st.session_state.generated_json = output_data
+        st.session_state.generated_spot_json = output_data
 
     # Display the JSON from session state if it exists
-    if st.session_state.generated_json:
-        generated_data = st.session_state.generated_json
+    if st.session_state.generated_spot_json:
+        generated_data = st.session_state.generated_spot_json
     else:
         generated_data = st.empty()
     if st.button("Save JSON to file"):
@@ -100,7 +92,7 @@ with col2:
         # Placeholder message
         json_dumps = json.dumps(generated_data, indent=4, default=str)
         # Also display as a raw code block for easy copying
-        if st.session_state.generated_json:
+        if st.session_state.generated_spot_json:
             stcode = st.code(json.dumps(generated_data, indent=4, default=str), language='json')
         else:
             stcode = st.empty()
