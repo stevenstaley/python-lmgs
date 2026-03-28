@@ -143,60 +143,61 @@ with col5:
     # Create a Python dictionary from the input values
         output_data = {
             "report_type": "Screening Report",
-            "team": team,
-            "screener": screener,
-            "screening_date": screendtg,
-            "status": status,
-            "capture_data": {
-                "capture_tag_isn": isn,
-                "capture_date": captdtg,
-                "place_of_capture": pocapture,
-                "capturing_unit": capture_unit,
-                "capture_circumstances": capture_circ,
-                "documents": {
-                    "docsyesorno": docs_bool,
-                    "documents_description": docdescription
+            "body": {
+                "team": team,
+                "screener": screener,
+                "screening_date": screendtg,
+                "status": status,
+                "capture_data": {
+                    "capture_tag_isn": isn,
+                    "capture_date": captdtg,
+                    "place_of_capture": pocapture,
+                    "capturing_unit": capture_unit,
+                    "capture_circumstances": capture_circ,
+                    "documents": {
+                        "docsyesorno": docs_bool,
+                        "documents_description": docdescription
+                    },
+                    "weapons": {
+                        "wpnsyesorno": weapons_bool,
+                        "weapons_description": wpnsdescription
+                    },
+                "personal_info": {
+                    "first_name": fname,
+                    "last_name": lname,
+                    "sex": sex,
+                    "dob": dob,
+                    "pob": pob,
+                    "marital_status": maritalstatus
                 },
-                "weapons": {
-                    "wpnsyesorno": weapons_bool,
-                    "weapons_description": wpnsdescription
+                "military": {
+                    "full_unit_designation": full_unit,
+                    "duty_position": dty_psn,
+                    "job": miljob,
+                    "branch": branch,
+                    "service_id": svcid,
+                    "station": station,
+                    "military_skills": milskills,
+                    "military_experience": milexp
                 },
-            "personal_info": {
-                "first_name": fname,
-                "last_name": lname,
-                "sex": sex,
-                "dob": dob,
-                "pob": pob,
-                "marital_status": maritalstatus
-            },
-            "military": {
-                "full_unit_designation": full_unit,
-                "duty_position": dty_psn,
-                "job": miljob,
-                "branch": branch,
-                "service_id": svcid,
-                "station": station,
-                "skills": milskills,
-                "military_experience": milexp
-            },
-            "civilian": {
-                "job": job,
-                "organization": org,
-                "duties": duties,
-                "skills": skills
-            },
-            "assessment_data": {
-                "wounded": wounded,
-                "intelligence_level": intelligencelevel,
-                "remarks": remarks,
-                "education": education,
-                "mental_condition": mentcondition,
-                "cooperation": cooperation,
-                "knowledge": knowledge,
-                "screener_assessment": assessment,
-                "approach_recommendations": approach
-            }
-    }
+                "civilian": {
+                    "job": job,
+                    "organization": org,
+                    "duties": duties,
+                    "skills": skills
+                },
+                "assessment_data": {
+                    "wounded": wounded,
+                    "intelligence_level": intelligencelevel,
+                    "remarks": remarks,
+                    "education": education,
+                    "mental_condition": mentcondition,
+                    "cooperation": cooperation,
+                    "knowledge": knowledge,
+                    "screener_assessment": assessment,
+                    "approach_recommendations": approach
+                }
+        }}
     }
         # Store the generated data in the session state
 
