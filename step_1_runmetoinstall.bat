@@ -1,6 +1,6 @@
 :: Set the path to your folder containing .whl files
 set PACKAGE_DIR=offline_packages
-
+py -m pip download -r requirements.txt -d offline_packages --only-binary=:all:
 py -m pip install --no-index --find-links="%PACKAGE_DIR%" pip setuptools wheel
 
 py -m pip install --no-index --find-links="%PACKAGE_DIR%" -r requirements.txt
