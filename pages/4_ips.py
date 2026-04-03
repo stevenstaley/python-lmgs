@@ -14,11 +14,6 @@ team_options = get_options_from_file(TEAMS)
 approach_options = get_options_from_file(APPROACHES)
 personnel_options = get_options_from_file(PERSONNEL)
 rns_options = get_options_from_file(RNS)
-# pg = st.navigation(pages, position="top")
-
-
-
-# --- App Title ---
 
 logo = "images/35m.png"
 
@@ -72,23 +67,23 @@ with col4:
         output_data = {
             "report_type": "IP",
             "body": {
-                "interrogator": intgr,
-                "linguist": linguist,
-                "reporter_number": reporternumber,
-                "start_dtg": startdtg,
-                "end_dtg": enddtg,
-                "isn": isn,
-                "number_of_times_interrogated": noti,
-                "objectives": intobjs,
-                "questioning_plan": questioningplan,
-                "concerns": concerns,
+                "interrogator": str(intgr),
+                "linguist": str(linguist),
+                "reporter_number": str(reporternumber),
+                "start_dtg": str(startdtg),
+                "end_dtg": str(enddtg),
+                "isn": str(isn),
+                "number_of_times_interrogated": str(noti),
+                "objectives": str(intobjs),
+                "questioning_plan": str(questioningplan),
+                "concerns": str(concerns),
                 "approaches": {
-                    "approach_1": app1select,
-                    "approach_1_writeup": app1,
-                    "approach_2": app2select,
-                    "approach_2_writeup": app2,
-                    "approach_3": app3select,
-                    "approach_3_writeup": app3
+                    "approach_1": str(app1select),
+                    "approach_1_writeup": str(app1),
+                    "approach_2": str(app2select),
+                    "approach_2_writeup": str(app2),
+                    "approach_3": str(app3select),
+                    "approach_3_writeup": str(app3)
                 }
             }}
 
