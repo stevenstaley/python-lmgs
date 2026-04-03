@@ -1,0 +1,59 @@
+{
+ "report_type": "Screening Report",
+ "body": {
+  "team": "None",
+  "screener": "None",
+  "screening_date": "2026-04-03 09:31:00",
+  "status": "None",
+  "capture_data": {
+   "capture_tag_isn": "",
+   "capture_date": "2026-04-03 09:31:00",
+   "place_of_capture": "",
+   "capturing_unit": "",
+   "capture_circumstances": "",
+   "documents": {
+    "docsyesorno": "False",
+    "documents_description": ""
+   },
+   "weapons": {
+    "wpnsyesorno": "False",
+    "weapons_description": ""
+   },
+   "personal_info": {
+    "first_name": "",
+    "last_name": "",
+    "sex": "None",
+    "dob": "2026-04-03",
+    "pob": "",
+    "marital_status": "None"
+   },
+   "military": {
+    "full_unit_designation": "",
+    "duty_position": "",
+    "job": "",
+    "branch": "None",
+    "service_id": "",
+    "station": "",
+    "military_skills": "",
+    "military_experience": ""
+   },
+   "civilian": {
+    "job": "",
+    "organization": "",
+    "duties": "",
+    "skills": ""
+   },
+   "assessment_data": {
+    "wounded": "None",
+    "intelligence_level": "None",
+    "remarks": "",
+    "education": "",
+    "mental_condition": "",
+    "cooperation": "1",
+    "knowledge": "A",
+    "screener_assessment": "",
+    "approach_recommendations": ""
+   }
+  }
+ }
+}
