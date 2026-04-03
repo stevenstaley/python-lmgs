@@ -144,58 +144,58 @@ with col5:
         output_data = {
             "report_type": "Screening Report",
             "body": {
-                "team": team,
-                "screener": screener,
-                "screening_date": screendtg,
-                "status": status,
+                "team": str(team),
+                "screener": str(screener),
+                "screening_date": str(screendtg),
+                "status": str(status),
                 "capture_data": {
-                    "capture_tag_isn": isn,
-                    "capture_date": captdtg,
-                    "place_of_capture": pocapture,
-                    "capturing_unit": capture_unit,
-                    "capture_circumstances": capture_circ,
+                    "capture_tag_isn": str(isn),
+                    "capture_date": str(captdtg),
+                    "place_of_capture": str(pocapture),
+                    "capturing_unit": str(capture_unit),
+                    "capture_circumstances": str(capture_circ),
                     "documents": {
-                        "docsyesorno": docs_bool,
-                        "documents_description": docdescription
+                        "docsyesorno": str(docs_bool),
+                        "documents_description": str(docdescription)
                     },
                     "weapons": {
-                        "wpnsyesorno": weapons_bool,
-                        "weapons_description": wpnsdescription
+                        "wpnsyesorno": str(weapons_bool),
+                        "weapons_description": str(wpnsdescription)
                     },
                 "personal_info": {
-                    "first_name": fname,
-                    "last_name": lname,
-                    "sex": sex,
-                    "dob": dob,
-                    "pob": pob,
-                    "marital_status": maritalstatus
+                    "first_name": str(fname),
+                    "last_name": str(lname),
+                    "sex": str(sex),
+                    "dob": str(dob),
+                    "pob": str(pob),
+                    "marital_status": str(maritalstatus)
                 },
                 "military": {
-                    "full_unit_designation": full_unit,
-                    "duty_position": dty_psn,
-                    "job": miljob,
-                    "branch": branch,
-                    "service_id": svcid,
-                    "station": station,
-                    "military_skills": milskills,
-                    "military_experience": milexp
+                    "full_unit_designation": str(full_unit),
+                    "duty_position": str(dty_psn),
+                    "job": str(miljob),
+                    "branch": str(branch),
+                    "service_id": str(svcid),
+                    "station": str(station),
+                    "military_skills": str(milskills),
+                    "military_experience": str(milexp)
                 },
                 "civilian": {
-                    "job": job,
-                    "organization": org,
-                    "duties": duties,
-                    "skills": skills
+                    "job": str(job),
+                    "organization": str(org),
+                    "duties": str(duties),
+                    "skills": str(skills)
                 },
                 "assessment_data": {
-                    "wounded": wounded,
-                    "intelligence_level": intelligencelevel,
-                    "remarks": remarks,
-                    "education": education,
-                    "mental_condition": mentcondition,
-                    "cooperation": cooperation,
-                    "knowledge": knowledge,
-                    "screener_assessment": assessment,
-                    "approach_recommendations": approach
+                    "wounded": str(wounded),
+                    "intelligence_level": str(intelligencelevel),
+                    "remarks": str(remarks),
+                    "education": str(education),
+                    "mental_condition": str(mentcondition),
+                    "cooperation": str(cooperation),
+                    "knowledge": str(knowledge),
+                    "screener_assessment": str(assessment),
+                    "approach_recommendations": str(approach)
                 }
         }}
     }
@@ -209,24 +209,22 @@ with col5:
     else:
         generated_data = st.empty()
     if st.button("Save JSON to file"):
-        today = str(date.today())
-        safe_captdtg = str(captdtg).replace(":", "-")
-        folder_path = f"screenings/{today}"
-        file_name = str(team) + "-" + str(isn) + "-" + str(fname) + "-" + str(lname) + str(safe_captdtg) + "-" + str(screener)
+        folder_path = "screenings/" + str(date.today())
+        file_name = team + "-" + isn + "-" + fname + "-" + lname + str(captdtg) + "-" + screener
         file_path = os.path.join(folder_path, f"{file_name}.json")
         # Create folder if it doesn't exist
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
         # Save the data to the file
         with open(file_path, "w") as f:
-            json.dump(generated_data, f, indent=4, default=str)
+            json.dump(generated_data, f, indent=1, default=str)
         # Display a success message
         st.success(f"File successfully saved to: {file_path}")
     else:
         # Placeholder message
-        json_dumps = json.dumps(generated_data, indent=4, default=str)
+        json_dumps = json.dumps(generated_data, indent=4, default=str, ensure_ascii=False)
         # Also display as a raw code block for easy copying
         if st.session_state.generated_json:
-            stcode = st.code(json.dumps(generated_data, indent=4, default=str), language='json')
+            stcode = st.code(json_dumps)
         else:
             stcode = st.empty()
