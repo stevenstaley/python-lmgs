@@ -77,8 +77,9 @@ with col2:
     else:
         generated_data = st.empty()
     if st.button("Save JSON to file"):
-        folder_path = "spots/" + str(date.today())
-        file_name = "SPOT" + "-" + str(when)
+        today = str(date.today()).replace(":", "-")
+        folder_path = f"spots\{today}"
+        file_name = "SPOT" + "-" + str(today) + "-" + str(team)
         file_path = os.path.join(folder_path, f"{file_name}.json")
         # Create folder if it doesn't exist
         if not os.path.exists(folder_path):
