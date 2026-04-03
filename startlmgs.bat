@@ -1,8 +1,7 @@
-@echo off
-
 REM Start Streamlit app
 start cmd /k streamlit run app.py
 
+echo Application Starting....
 REM Wait a few seconds for Streamlit to start
 timeout /t 5 > nul
 
