@@ -1,0 +1,23 @@
+{
+    "report_type": "IP",
+    "body": {
+        "interrogator": "Person 1",
+        "linguist": "",
+        "reporter_number": "123",
+        "start_dtg": "2026-04-03 09:42:00",
+        "end_dtg": "2026-04-03 09:42:00",
+        "isn": "",
+        "number_of_times_interrogated": "0",
+        "objectives": "",
+        "questioning_plan": "",
+        "concerns": "",
+        "approaches": {
+            "approach_1": "None",
+            "approach_1_writeup": "",
+            "approach_2": "None",
+            "approach_2_writeup": "",
+            "approach_3": "None",
+            "approach_3_writeup": ""
+        }
+    }
+}

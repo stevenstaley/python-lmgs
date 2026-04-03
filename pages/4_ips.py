@@ -98,7 +98,7 @@ with col4:
         generated_data = st.empty()
     if st.button("Save JSON to file"):
         folder_path = "ips/" + str(date.today())
-        file_name = "IP" + "-" + isn + "-" + intgr + "-" + str(startdtg) + "-" + str(noti)
+        file_name = "IP" + "-" + isn + "-" + intgr + "-" + str(startdtg).replace(":", "-") + "-" + str(noti)
         file_path = os.path.join(folder_path, f"{file_name}.json")
         # Create folder if it doesn't exist
         if not os.path.exists(folder_path):
