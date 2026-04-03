@@ -210,7 +210,7 @@ with col5:
         generated_data = st.empty()
     if st.button("Save JSON to file"):
         folder_path = "screenings/" + str(date.today())
-        file_name = team + "-" + isn + "-" + fname + "-" + lname + str(captdtg) + "-" + screener
+        file_name = str(team) + "-" + str(isn) + "-" + str(fname) + "-" + str(lname) + str(captdtg) + "-" + str(screener)
         file_path = os.path.join(folder_path, f"{file_name}.json")
         # Create folder if it doesn't exist
         if not os.path.exists(folder_path):
