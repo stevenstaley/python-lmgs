@@ -57,14 +57,14 @@ with col2:
     # Create a Python dictionary from the input values
         output_data = {
             "report_type": "SPOT",
-            "team": team,
-            "who": who,
-            "what": what,
-            "when": when,
-            "where": where,
-            "why": why,
-            "how": how,
-            "additional_information": other
+            "team": str(team),
+            "who": str(who),
+            "what": str(what),
+            "when": str(when),
+            "where": str(where),
+            "why": str(why),
+            "how": str(how),
+            "additional_information": str(other)
         }
 
         # Store the generated data in the session state
